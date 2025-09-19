@@ -24,7 +24,7 @@ const celoMainnet = {
 }
 
 // Project ID - This should be set in environment variables
-export const projectId = env.WALLET_CONNECT_PROJECT_ID || 'demo-project-id'
+export const projectId = env.WALLET_CONNECT_PROJECT_ID || '881a95795846fe3dc63f02367f017450'
 
 if (!projectId) {
   throw new Error('Project ID is not defined')
