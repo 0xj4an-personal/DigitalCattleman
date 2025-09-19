@@ -94,10 +94,10 @@ export default function Home() {
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-[#1C1C1C] dark:text-[#F5F1E7] mb-1 transition-colors duration-200">
-                    Web3 Merchandise
+                    Premium Cattle
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
-                    Shop with crypto, own with pride
+                    Buy with crypto, own with pride
                   </p>
                 </div>
               </div>
@@ -191,6 +191,52 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-200">
                 {t('features.communityDriven.description')}
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Product Video Section */}
+      <section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#1C1C1C] dark:text-[#F5F1E7] mb-4 transition-colors duration-200">
+              Lote 001 - Vacas Paridas con Crías
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 transition-colors duration-200">
+              Conoce nuestro lote premium de 3 vacas paridas con sus crías
+            </p>
+          </div>
+
+          {/* Video Section */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden mb-12 transition-colors duration-200">
+            <div className="aspect-video bg-gray-100 dark:bg-gray-700">
+              <video
+                controls
+                className="w-full h-full object-cover"
+                poster="/assets/VacasParidas.png"
+              >
+                <source src="/assets/Video1.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-[#1C1C1C] dark:text-[#F5F1E7] mb-3 transition-colors duration-200">
+                Lote 001 - Vacas Paridas con Crías
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-200">
+                3 Vacas Paridas con 2 crías macho y 1 cría hembra. Producción 7 litros/día. Ubicación: Necoclí
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-2xl font-bold text-[#3E7C4A]">
+                  $5.000.000 cCOP
+                </span>
+                <Link href="/products?collection=2">
+                  <button className="px-6 py-2 bg-[#3E7C4A] text-white rounded-lg hover:bg-[#2d5f3a] transition-colors duration-200">
+                    Ver Detalles
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -99,128 +99,14 @@
     "priceHighToLow": "Price: High to Low",
     "highestRated": "Highest Rated",
     "productItems": {
-      "vacaParida1": {
-        "name": "Premium Breeding Cow #001",
-        "description": "High-quality breeding cow with excellent genetics and proven fertility record. Raised on premium pastures with optimal nutrition. Perfect for expanding your herd with superior bloodlines.",
-        "shortDescription": "Premium breeding cow with excellent genetics"
-      },
-      "vacaParida2": {
-        "name": "Premium Breeding Cow #002",
-        "description": "Outstanding breeding cow with exceptional maternal instincts and strong health history. Well-documented lineage and excellent milk production. Ideal for serious cattle operations.",
-        "shortDescription": "Outstanding breeding cow with maternal instincts"
-      },
-      "vacaParida3": {
-        "name": "Premium Breeding Cow #003",
-        "description": "Top-quality breeding cow with superior conformation and excellent fertility rates. Raised in optimal conditions with premium feed and veterinary care.",
-        "shortDescription": "Top-quality breeding cow with superior conformation"
-      },
-      "vacaHorra1": {
-        "name": "Quality Non-Breeding Cow #001",
-        "description": "Healthy non-breeding cow with good conformation and strong build. Perfect for meat production or as foundation stock for breeding programs.",
-        "shortDescription": "Quality non-breeding cow for meat production"
-      },
-      "vacaHorra2": {
-        "name": "Quality Non-Breeding Cow #002",
-        "description": "Robust non-breeding cow with excellent health record and good temperament. Ideal for various agricultural purposes and herd management.",
-        "shortDescription": "Robust non-breeding cow with excellent health"
-      },
-      "vacaHorra3": {
-        "name": "Quality Non-Breeding Cow #003",
-        "description": "Strong non-breeding cow with good muscle development and healthy constitution. Perfect for commercial operations and sustainable farming.",
-        "shortDescription": "Strong non-breeding cow for commercial operations"
-      },
-      "novillaVientre1": {
-        "name": "Pregnant Heifer #001",
-        "description": "Young pregnant heifer with excellent breeding potential and healthy pregnancy. First-time mother with good genetic background and proper veterinary care.",
-        "shortDescription": "Young pregnant heifer with breeding potential"
-      },
-      "novillaVientre2": {
-        "name": "Pregnant Heifer #002",
-        "description": "Quality pregnant heifer with strong maternal lineage and confirmed pregnancy. Well-nourished and ready for successful calving season.",
-        "shortDescription": "Quality pregnant heifer with maternal lineage"
-      },
-      "novillaVientre3": {
-        "name": "Pregnant Heifer #003",
-        "description": "Premium pregnant heifer with excellent conformation and healthy development. Perfect for expanding breeding operations with quality genetics.",
-        "shortDescription": "Premium pregnant heifer with excellent conformation"
-      },
-      "hembraLevante1": {
-        "name": "Young Female #001",
-        "description": "Healthy young female cattle with good growth potential and strong constitution. Perfect for developing into breeding stock or commercial production.",
-        "shortDescription": "Healthy young female with growth potential"
-      },
-      "hembraLevante2": {
-        "name": "Young Female #002",
-        "description": "Quality young female with excellent genetic background and good health record. Ideal for long-term breeding programs and herd development.",
-        "shortDescription": "Quality young female with genetic background"
-      },
-      "hembraLevante3": {
-        "name": "Young Female #003",
-        "description": "Robust young female with strong build and good temperament. Perfect for sustainable farming operations and future breeding stock.",
-        "shortDescription": "Robust young female for sustainable farming"
-      },
-      "machoLevante1": {
-        "name": "Young Male #001",
-        "description": "Healthy young male cattle with good growth potential and strong build. Perfect for developing into breeding bulls or commercial production.",
-        "shortDescription": "Healthy young male with growth potential"
-      },
-      "machoLevante2": {
-        "name": "Young Male #002",
-        "description": "Quality young male with excellent genetic background and good conformation. Ideal for breeding programs and herd improvement.",
-        "shortDescription": "Quality young male with genetic background"
-      },
-      "machoLevante3": {
-        "name": "Young Male #003",
-        "description": "Robust young male with strong constitution and good temperament. Perfect for commercial operations and future breeding programs.",
-        "shortDescription": "Robust young male for commercial operations"
-      },
-      "machoCeba1": {
-        "name": "Feedlot Male #001",
-        "description": "Premium male cattle optimized for feedlot operations. Excellent feed conversion rates and strong muscle development for quality meat production.",
-        "shortDescription": "Premium male for feedlot operations"
-      },
-      "machoCeba2": {
-        "name": "Feedlot Male #002",
-        "description": "Quality male cattle with superior weight gain potential and excellent health record. Perfect for efficient meat production and commercial feedlots.",
-        "shortDescription": "Quality male with weight gain potential"
-      },
-      "machoCeba3": {
-        "name": "Feedlot Male #003",
-        "description": "High-grade male cattle with optimal feed efficiency and strong build. Ideal for premium meat production and profitable feedlot operations.",
-        "shortDescription": "High-grade male for premium meat production"
-      },
-      "torete1": {
-        "name": "Young Bull #001",
-        "description": "Promising young bull with excellent genetic potential and good conformation. Perfect for developing into breeding stock or commercial production.",
-        "shortDescription": "Promising young bull with genetic potential"
-      },
-      "torete2": {
-        "name": "Young Bull #002",
-        "description": "Quality young bull with strong build and good health record. Ideal for breeding programs and herd improvement initiatives.",
-        "shortDescription": "Quality young bull for breeding programs"
-      },
-      "torete3": {
-        "name": "Young Bull #003",
-        "description": "Robust young bull with excellent temperament and strong constitution. Perfect for sustainable farming and future breeding operations.",
-        "shortDescription": "Robust young bull for sustainable farming"
-      },
-      "toro1": {
-        "name": "Premium Bull #001",
-        "description": "Exceptional breeding bull with proven genetics and excellent conformation. Outstanding breeding record and superior bloodlines for premium herd development.",
-        "shortDescription": "Exceptional breeding bull with proven genetics"
-      },
-      "toro2": {
-        "name": "Premium Bull #002",
-        "description": "Top-quality breeding bull with outstanding health record and superior traits. Perfect for serious breeding operations and genetic improvement programs.",
-        "shortDescription": "Top-quality breeding bull with superior traits"
-      },
-      "toro3": {
-        "name": "Premium Bull #003",
-        "description": "Elite breeding bull with exceptional breeding performance and premium genetics. Ideal for high-end breeding programs and genetic advancement.",
-        "shortDescription": "Elite breeding bull with exceptional performance"
+      "lote001": {
+        "name": "Lote 001 - Vacas Paridas con Crías",
+        "description": "Premium lot consisting of 3 breeding cows with their calves: 2 male calves and 1 female calf. Daily milk production of 7 liters per cow. Located in Necoclí, Antioquia. Excellent breeding stock with proven genetics and healthy offspring. Perfect for expanding your herd with quality breeding stock.",
+        "shortDescription": "3 Vacas Paridas con 2 crías macho y 1 cría hembra. Producción 7 litros/día. Ubicación: Necoclí"
       }
     },
     "categories": {
+      "lote": "Lots",
       "vaca": "Cows",
       "novilla": "Heifers",
       "hembra": "Females",

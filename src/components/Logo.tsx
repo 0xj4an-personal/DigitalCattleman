@@ -14,7 +14,7 @@ export default function Logo({
   width = 40, 
   height = 40, 
   className = '', 
-  alt = 'Copoazú Labs Logo' 
+  alt = 'Digital Cattleman Logo' 
 }: LogoProps) {
   const [mounted, setMounted] = useState(false);
   const [isDark, setIsDark] = useState(false);
@@ -52,7 +52,7 @@ export default function Logo({
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
       <Image
-        src="/assets/logo.svg"
+        src="/assets/GanaderoDigital.png"
         alt={alt}
         width={width}
         height={height}
