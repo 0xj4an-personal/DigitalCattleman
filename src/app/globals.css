@@ -3,30 +3,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ganadero Digital - Nature-Inspired Color Palette */
+/* Ganadero Digital - Enhanced Nature Color Palette */
 :root {
-  /* Earth Tones - Primary Colors */
-  --earth-brown: #5D4E37;        /* Rich soil brown */
-  --sage-green: #8FBC8F;         /* Sage green - nature's calm */
-  --forest-green: #2D5016;       /* Deep forest green */
-  --wheat-gold: #D2B48C;         /* Wheat field gold */
+  /* Enhanced Green Tones - Primary Colors */
+  --earth-brown: #4A5D23;        /* Rich earth with green undertones */
+  --sage-green: #7BA05B;         /* Vibrant sage green */
+  --forest-green: #2F5233;       /* Deep emerald forest green */
+  --wheat-gold: #B8A082;         /* Warm wheat with green hints */
   
-  /* Natural Backgrounds */
-  --cream-natural: #F5F5DC;      /* Natural cream */
-  --soil-light: #F4F1EB;         /* Light soil tone */
-  --bark-dark: #3C2415;          /* Tree bark dark */
-  --leaf-shadow: #1A2E1A;        /* Deep leaf shadow */
+  /* Enhanced Natural Backgrounds */
+  --cream-natural: #F0F4E8;      /* Light green-tinted cream */
+  --soil-light: #E8F0E0;         /* Soft green soil tone */
+  --bark-dark: #2C3E1A;          /* Dark forest bark */
+  --leaf-shadow: #1A2E1F;        /* Deep emerald leaf shadow */
   
-  /* Accent Colors */
-  --sunset-orange: #CD853F;      /* Sunset orange */
-  --sky-blue: #87CEEB;           /* Sky blue */
-  --rose-quartz: #C19A6B;        /* Natural rose quartz */
-  --stone-gray: #696969;         /* Stone gray */
+  /* Enhanced Accent Colors */
+  --sunset-orange: #A67C3A;      /* Muted sunset with green undertones */
+  --sky-blue: #7FB069;           /* Green-tinted sky blue */
+  --rose-quartz: #8F9B6B;        /* Natural moss green quartz */
+  --stone-gray: #5A6B47;         /* Green-tinted stone gray */
   
-  /* Text Colors */
-  --charcoal: #36454F;           /* Charcoal for text */
-  --moss-green: #556B2F;         /* Moss green accent */
-  --white-natural: #FFFEF7;      /* Natural white */
+  /* Enhanced Text Colors */
+  --charcoal: #2C3E1A;           /* Deep green charcoal for text */
+  --moss-green: #4A6741;         /* Rich moss green accent */
+  --white-natural: #F8FBF5;      /* Soft green-tinted white */
+  
+  /* Additional Green Variations */
+  --light-green: #9BC088;        /* Light fresh green */
+  --medium-green: #6B8E5A;       /* Medium forest green */
+  --dark-green: #3E5A2F;         /* Dark forest green */
+  --accent-green: #5A7C4A;       /* Vibrant accent green */
 }
 
 * {

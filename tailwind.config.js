@@ -9,38 +9,44 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Earth Tones - Primary Colors
-        'earth-brown': '#5D4E37',
-        'sage-green': '#8FBC8F',
-        'forest-green': '#2D5016',
-        'wheat-gold': '#D2B48C',
+        // Enhanced Green Tones - Primary Colors
+        'earth-brown': '#4A5D23',
+        'sage-green': '#7BA05B',
+        'forest-green': '#2F5233',
+        'wheat-gold': '#B8A082',
         
-        // Natural Backgrounds
-        'cream-natural': '#F5F5DC',
-        'soil-light': '#F4F1EB',
-        'bark-dark': '#3C2415',
-        'leaf-shadow': '#1A2E1A',
+        // Enhanced Natural Backgrounds
+        'cream-natural': '#F0F4E8',
+        'soil-light': '#E8F0E0',
+        'bark-dark': '#2C3E1A',
+        'leaf-shadow': '#1A2E1F',
         
-        // Accent Colors
-        'sunset-orange': '#CD853F',
-        'sky-blue': '#87CEEB',
-        'rose-quartz': '#C19A6B',
-        'stone-gray': '#696969',
+        // Enhanced Accent Colors
+        'sunset-orange': '#A67C3A',
+        'sky-blue': '#7FB069',
+        'rose-quartz': '#8F9B6B',
+        'stone-gray': '#5A6B47',
         
-        // Text Colors
-        'charcoal': '#36454F',
-        'moss-green': '#556B2F',
-        'white-natural': '#FFFEF7',
+        // Enhanced Text Colors
+        'charcoal': '#2C3E1A',
+        'moss-green': '#4A6741',
+        'white-natural': '#F8FBF5',
+        
+        // Additional Green Variations
+        'light-green': '#9BC088',
+        'medium-green': '#6B8E5A',
+        'dark-green': '#3E5A2F',
+        'accent-green': '#5A7C4A',
         
         // Legacy colors for backward compatibility
-        'cascara-marron': '#5D4E37',
-        'pulpa-crema': '#F5F5DC',
-        'verde-selva': '#2D5016',
-        'amarillo-amazonico': '#D2B48C',
-        'rosa-tropical': '#C19A6B',
-        'negro-suave': '#3C2415',
-        'gris-ceniza': '#696969',
-        'blanco': '#FFFEF7',
+        'cascara-marron': '#4A5D23',
+        'pulpa-crema': '#F0F4E8',
+        'verde-selva': '#2F5233',
+        'amarillo-amazonico': '#B8A082',
+        'rosa-tropical': '#8F9B6B',
+        'negro-suave': '#2C3E1A',
+        'gris-ceniza': '#5A6B47',
+        'blanco': '#F8FBF5',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -82,10 +88,13 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'nature-gradient': 'linear-gradient(135deg, #F5F5DC 0%, #F4F1EB 100%)',
-        'earth-gradient': 'linear-gradient(135deg, #5D4E37 0%, #2D5016 50%, #8FBC8F 100%)',
-        'sky-gradient': 'linear-gradient(135deg, #87CEEB 0%, #F5F5DC 50%, #D2B48C 100%)',
-        'forest-gradient': 'linear-gradient(135deg, #2D5016 0%, #1A2E1A 100%)',
+        'nature-gradient': 'linear-gradient(135deg, #F0F4E8 0%, #E8F0E0 100%)',
+        'earth-gradient': 'linear-gradient(135deg, #4A5D23 0%, #2F5233 50%, #7BA05B 100%)',
+        'sky-gradient': 'linear-gradient(135deg, #7FB069 0%, #F0F4E8 50%, #B8A082 100%)',
+        'forest-gradient': 'linear-gradient(135deg, #2F5233 0%, #1A2E1F 100%)',
+        'green-gradient': 'linear-gradient(135deg, #9BC088 0%, #6B8E5A 50%, #3E5A2F 100%)',
+        'sage-gradient': 'linear-gradient(135deg, #7BA05B 0%, #4A6741 100%)',
+        'moss-gradient': 'linear-gradient(135deg, #8F9B6B 0%, #5A6B47 100%)',
       },
       borderRadius: {
         'organic': '16px 8px 16px 8px',

@@ -73,7 +73,7 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
 
   return (
     <div style={{ 
-      border: '2px solid #10B981', 
+      border: '2px solid #7BA05B', 
       borderRadius: '8px', 
       padding: '16px',
       backgroundColor: paymentStatus === 'success' ? '#F0FDF4' : paymentStatus === 'error' ? '#FEF2F2' : '#FFFFFF'
@@ -83,14 +83,14 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
         <div style={{ flex: 1 }}>
           <h3 style={{ 
             fontWeight: '600', 
-            color: '#111827',
+            color: '#2C3E1A',
             marginBottom: '4px'
           }}>
             {getStatusText()}
           </h3>
           <p style={{ 
             fontSize: '14px', 
-            color: '#6B7280',
+            color: '#5A6B47',
             margin: 0
           }}>
             {t('cryptoPaymentDescription')}
@@ -120,7 +120,7 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
           <span style={{ fontSize: '14px', color: '#6B7280' }}>Your cCOP:</span>
           <span style={{ 
             fontWeight: '600', 
-            color: hasEnoughBalance(totalPrice) ? '#059669' : '#DC2626'
+            color: hasEnoughBalance(totalPrice) ? '#2F5233' : '#DC2626'
           }}>
             {ccopBalance}
             {!hasEnoughBalance(totalPrice) && (
@@ -144,15 +144,15 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
 
       {paymentStatus === 'success' && txHash && (
         <div style={{ 
-          backgroundColor: '#F0FDF4', 
-          border: '1px solid #BBF7D0',
+          backgroundColor: '#F0F4E8', 
+          border: '1px solid #9BC088',
           borderRadius: '6px', 
           padding: '12px',
           marginBottom: '16px'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
             <CheckCircle className="w-4 h-4 text-green-600" />
-            <span style={{ fontSize: '14px', fontWeight: '600', color: '#065F46' }}>
+            <span style={{ fontSize: '14px', fontWeight: '600', color: '#2F5233' }}>
               Transaction Successful
             </span>
           </div>
@@ -165,7 +165,7 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
               alignItems: 'center',
               gap: '4px',
               fontSize: '12px',
-              color: '#059669',
+              color: '#4A6741',
               textDecoration: 'none'
             }}
           >
@@ -223,7 +223,7 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
           padding: '12px 24px',
           backgroundColor: paymentStatus === 'success' ? '#10B981' : 
                           isConnected && !canMakePayment(totalPrice) ? '#DC2626' :
-                          isConnected ? '#059669' : '#6B7280',
+                          isConnected ? '#2F5233' : '#5A6B47',
           color: '#FFFFFF',
           border: 'none',
           borderRadius: '8px',
