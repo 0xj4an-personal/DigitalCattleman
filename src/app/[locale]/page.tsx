@@ -110,50 +110,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-sky-gradient dark:bg-forest-gradient transition-all duration-500 relative overflow-hidden">
-        {/* Nature Elements */}
-        <div className="absolute top-5 right-20 w-16 h-16 bg-sage-green opacity-20 rounded-full animate-float"></div>
-        <div className="absolute bottom-10 left-20 w-12 h-12 bg-wheat-gold opacity-25 rounded-full animate-float" style={{animationDelay: '1.5s'}}></div>
-        
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-            <div className="text-center group">
-              <div className="text-5xl font-extrabold bg-gradient-to-br from-forest-green to-sage-green dark:from-wheat-gold dark:to-sunset-orange bg-clip-text text-transparent mb-3 transition-all duration-300 group-hover:scale-110">
-                10K+
-              </div>
-              <div className="text-lg text-charcoal dark:text-white-natural font-semibold transition-colors duration-300">
-                {t('stats.happyCustomers')}
-              </div>
-            </div>
-            <div className="text-center group">
-              <div className="text-5xl font-extrabold bg-gradient-to-br from-forest-green to-sage-green dark:from-wheat-gold dark:to-sunset-orange bg-clip-text text-transparent mb-3 transition-all duration-300 group-hover:scale-110">
-                50K+
-              </div>
-              <div className="text-lg text-charcoal dark:text-white-natural font-semibold transition-colors duration-300">
-                {t('stats.productsSold')}
-              </div>
-            </div>
-            <div className="text-center group">
-              <div className="text-5xl font-extrabold bg-gradient-to-br from-forest-green to-sage-green dark:from-wheat-gold dark:to-sunset-orange bg-clip-text text-transparent mb-3 transition-all duration-300 group-hover:scale-110">
-                25+
-              </div>
-              <div className="text-lg text-charcoal dark:text-white-natural font-semibold transition-colors duration-300">
-                {t('stats.countries')}
-              </div>
-            </div>
-            <div className="text-center group">
-              <div className="text-5xl font-extrabold bg-gradient-to-br from-forest-green to-sage-green dark:from-wheat-gold dark:to-sunset-orange bg-clip-text text-transparent mb-3 transition-all duration-300 group-hover:scale-110">
-                3+
-              </div>
-              <div className="text-lg text-charcoal dark:text-white-natural font-semibold transition-colors duration-300">
-                {t('stats.yearsExperience')}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
       <section className="py-16 bg-[#F5F1E7] dark:bg-[#1C1C1C] transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4">
@@ -209,10 +165,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-charcoal dark:text-white-natural mb-4 transition-colors duration-300">
-              {t('productItems.lote001.name')}
+              {t('hero.lote001Name')}
             </h2>
             <p className="text-lg text-moss-green dark:text-sage-green transition-colors duration-300">
-              {t('productItems.lote001.shortDescription')}
+              {t('hero.lote001Description')}
             </p>
           </div>
 
@@ -230,10 +186,10 @@ export default function Home() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold text-charcoal dark:text-white-natural mb-3 transition-colors duration-300">
-                {t('productItems.lote001.name')}
+                {t('hero.lote001Name')}
               </h3>
               <p className="text-moss-green dark:text-sage-green mb-4 transition-colors duration-300">
-                {t('productItems.lote001.shortDescription')}
+                {t('hero.lote001Description')}
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold text-forest-green dark:text-sage-green">
