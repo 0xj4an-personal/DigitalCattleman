@@ -15,7 +15,9 @@
     "view": "View",
     "share": "Share",
     "copy": "Copy",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "videoNotSupported": "Your browser does not support the video element.",
+    "viewDetails": "View Details"
   },
   "navigation": {
     "home": "Home",
