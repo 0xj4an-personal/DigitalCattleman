@@ -18,6 +18,7 @@ export default function Logo({
 }: LogoProps) {
   const [mounted, setMounted] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -49,10 +50,24 @@ export default function Logo({
     );
   }
 
+  // Fallback if image fails to load
+  if (imageError) {
+    return (
+      <div 
+        className={`bg-[#3E7C4A] rounded-lg flex items-center justify-center text-white font-bold ${className}`}
+        style={{ width, height }}
+      >
+        <span style={{ fontSize: Math.min(width, height) * 0.4 }}>
+          GD
+        </span>
+      </div>
+    );
+  }
+
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
       <Image
-        src="/assets/GanaderoDigital.png"
+        src="/assets/GanaderoDigital.svg"
         alt={alt}
         width={width}
         height={height}
@@ -63,6 +78,7 @@ export default function Logo({
           filter: isDark ? 'brightness(0) invert(1)' : 'none',
         }}
         priority
+        onError={() => setImageError(true)}
       />
     </div>
   );
