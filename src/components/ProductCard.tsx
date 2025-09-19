@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Heart, ShoppingCart, Star, Eye, Shield, Play, Pause } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useCart } from '@/contexts/CartContext';
@@ -19,6 +19,7 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
   const [isLiked, setIsLiked] = useState(false);
   const [showActions, setShowActions] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const t = useTranslations('products');
   const tCollections = useTranslations('collections');
   const { addItem } = useCart();
@@ -46,7 +47,15 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
   };
 
   const handleVideoToggle = () => {
-    setIsVideoPlaying(!isVideoPlaying);
+    if (videoRef.current) {
+      if (isVideoPlaying) {
+        videoRef.current.pause();
+        setIsVideoPlaying(false);
+      } else {
+        videoRef.current.play();
+        setIsVideoPlaying(true);
+      }
+    }
   };
 
   const handleVideoEnd = () => {
@@ -78,6 +87,7 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
         {product.video ? (
           <div style={{ position: 'relative', width: '100%', height: '100%' }}>
             <video
+              ref={videoRef}
               src={product.video}
               poster={product.image}
               style={{
@@ -88,8 +98,10 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
               muted
               loop
               playsInline
-              autoPlay={isVideoPlaying}
+              preload="metadata"
               onEnded={handleVideoEnd}
+              onPlay={() => setIsVideoPlaying(true)}
+              onPause={() => setIsVideoPlaying(false)}
               onError={(e) => {
                 // Fallback to image if video fails
                 const target = e.target as HTMLVideoElement;
@@ -107,18 +119,28 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
               }}
             />
             {/* Video Play/Pause Overlay */}
-            <div 
-              className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-20 hover:bg-opacity-30 transition-all duration-200"
-              onClick={handleVideoToggle}
-            >
-              <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-100 transition-all duration-200">
-                {isVideoPlaying ? (
-                  <Pause className="w-6 h-6 text-gray-800" />
-                ) : (
+            {!isVideoPlaying && (
+              <div 
+                className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-30 hover:bg-opacity-40 transition-all duration-200"
+                onClick={handleVideoToggle}
+              >
+                <div className="w-16 h-16 bg-white bg-opacity-95 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-100 hover:scale-110 transition-all duration-200">
                   <Play className="w-6 h-6 text-gray-800 ml-1" />
-                )}
+                </div>
               </div>
-            </div>
+            )}
+            
+            {/* Video Pause Overlay - Show when playing */}
+            {isVideoPlaying && (
+              <div 
+                className="absolute inset-0 cursor-pointer bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-200"
+                onClick={handleVideoToggle}
+              >
+                <div className="absolute top-3 right-3 w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all duration-200">
+                  <Pause className="w-5 h-5 text-white" />
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <img
