@@ -56,7 +56,7 @@ export const config = wagmiAdapter.wagmiConfig
 
 // Set up metadata
 export const metadata = {
-  name: 'Digital Cattleman',
+  name: 'Ganadero Digital',
   description: 'Digital Cattle Trading Platform - Premium Ganadería',
   url: env.APP_URL,
   icons: [`${env.APP_URL}/favicon.ico`]

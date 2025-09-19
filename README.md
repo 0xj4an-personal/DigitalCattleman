@@ -1,10 +1,10 @@
-# 🐄 Digital Cattleman - Premium Cattle Trading Platform
+# 🐄 Ganadero Digital - Premium Cattle Trading Platform
 
 A modern, responsive digital platform for premium cattle trading and ganadería. Built with Next.js 15, TypeScript, and inline CSS styling, featuring crypto payments and wallet integration.
 
 ## ✨ Features
 
-- **🎨 Beautiful Design**: Custom Digital Cattleman color palette with modern UI/UX
+- **🎨 Beautiful Design**: Custom Ganadero Digital color palette with modern UI/UX
 - **🔗 Web3 Integration**: Wallet connection and crypto payment with cCOP tokens
 - **📱 Responsive**: Mobile-first design that works on all devices
 - **🐄 Cattle Trading**: Premium cattle catalog, search, filtering, and shopping cart

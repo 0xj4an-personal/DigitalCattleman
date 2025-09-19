@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Digital Cattleman - Premium Cattle Trading Platform",
+  title: "Ganadero Digital - Premium Cattle Trading Platform",
   description: "Discover premium cattle from Colombia's finest ranches. Connect your wallet, buy with crypto, and join the digital ganadería revolution.",
   keywords: ["cattle", "ganadería", "crypto", "blockchain", "cattle trading", "Web3", "digital farming", "livestock"],
-  authors: [{ name: "Digital Cattleman" }],
-  creator: "Digital Cattleman",
-  publisher: "Digital Cattleman",
+  authors: [{ name: "Ganadero Digital" }],
+  creator: "Ganadero Digital",
+  publisher: "Ganadero Digital",
   formatDetection: {
     email: false,
     address: false,
@@ -18,16 +18,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Digital Cattleman - Premium Cattle Trading Platform",
+    title: "Ganadero Digital - Premium Cattle Trading Platform",
     description: "Discover premium cattle from Colombia's finest ranches. Connect your wallet, buy with crypto, and join the digital ganadería revolution.",
     url: 'https://digitalcattleman.com',
-    siteName: 'Digital Cattleman',
+    siteName: 'Ganadero Digital',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Digital Cattleman - Premium Cattle Trading Platform',
+        alt: 'Ganadero Digital - Premium Cattle Trading Platform',
       },
     ],
     locale: 'en_US',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Digital Cattleman - Premium Cattle Trading Platform",
+    title: "Ganadero Digital - Premium Cattle Trading Platform",
     description: "Discover premium cattle from Colombia's finest ranches. Connect your wallet, buy with crypto, and join the digital ganadería revolution.",
     images: ['/og-image.jpg'],
   },

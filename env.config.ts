@@ -3,7 +3,7 @@
 
 export const env = {
   // Application Configuration
-  APP_NAME: process.env.NEXT_PUBLIC_APP_NAME || 'Digital Cattleman',
+  APP_NAME: process.env.NEXT_PUBLIC_APP_NAME || 'Ganadero Digital',
   APP_DESCRIPTION: process.env.NEXT_PUBLIC_APP_DESCRIPTION || 'Digital Cattle Trading Platform - Premium Ganadería',
   APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   APP_VERSION: process.env.NEXT_PUBLIC_APP_VERSION || '0.1.0',

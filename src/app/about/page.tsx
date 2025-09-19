@@ -11,7 +11,7 @@ const teamMembers = [
   {
     name: 'Sarah Martinez',
     role: 'Head of Design',
-    description: 'Fashion designer passionate about sustainable tech',
+    description: 'Cattle expert passionate about sustainable ranching',
     image: '/team/sarah.jpg'
   },
   {
@@ -26,7 +26,7 @@ const values = [
   {
     icon: Target,
     title: 'Innovation',
-    description: 'Pushing the boundaries of fashion technology'
+    description: 'Pushing the boundaries of cattle trading technology'
   },
   {
     icon: Heart,
@@ -66,7 +66,7 @@ export default function About() {
             margin: '0 auto',
             lineHeight: '1.6'
           }}>
-            We're pioneering the future of fashion through Web3 technology, 
+            We're pioneering the future of cattle trading through Web3 technology, 
             creating exclusive merchandise that connects the physical and digital worlds.
           </p>
         </div>
@@ -91,7 +91,7 @@ export default function About() {
                 lineHeight: '1.6',
                 marginBottom: '24px'
               }}>
-                To revolutionize the fashion industry by integrating Web3 technology, 
+                To revolutionize the cattle trading industry by integrating Web3 technology, 
                 creating a decentralized marketplace where creativity, ownership, and 
                 community thrive together.
               </p>
@@ -101,9 +101,9 @@ export default function About() {
                 lineHeight: '1.6',
                 marginBottom: '32px'
               }}>
-                We believe that fashion should be accessible, sustainable, and 
+                We believe that cattle trading should be accessible, sustainable, and 
                 empowering for everyone. Our platform enables users to own, trade, 
-                and showcase their digital and physical fashion assets.
+                and showcase their digital and physical cattle assets.
               </p>
               <Link href="/products">
                 <button style={{
@@ -137,7 +137,7 @@ export default function About() {
               <div style={{ textAlign: 'center' }}>
                 <Award style={{ width: '80px', height: '80px', color: '#3E7C4A', marginBottom: '16px' }} />
                 <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#1C1C1C' }}>
-                  Innovation in Fashion
+                  Innovation in Cattle Trading
                 </h3>
               </div>
             </div>
@@ -302,7 +302,7 @@ export default function About() {
             maxWidth: '600px',
             margin: '0 auto 32px'
           }}>
-            Be part of the Web3 fashion revolution. Connect your wallet and start exploring.
+            Be part of the Web3 cattle trading revolution. Connect your wallet and start exploring.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }} className="sm:flex-row">
             <Link href="/products">
