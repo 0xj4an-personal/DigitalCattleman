@@ -67,7 +67,7 @@ export default function Logo({
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
       <Image
-        src="/assets/GanaderoDigital.svg"
+        src="/assets/Logo.png"
         alt={alt}
         width={width}
         height={height}
