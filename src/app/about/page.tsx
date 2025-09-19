@@ -57,7 +57,7 @@ export default function About() {
             marginBottom: '24px',
             lineHeight: '1.1'
           }}>
-            About Copoazú Labs
+            About Ganadero Digital
           </h1>
           <p style={{
             fontSize: '1.25rem',
@@ -227,7 +227,7 @@ export default function About() {
               maxWidth: '600px',
               margin: '0 auto'
             }}>
-              The passionate individuals behind Copoazú Labs
+              The passionate individuals behind Ganadero Digital
             </p>
           </div>
           

@@ -178,7 +178,7 @@ export default function Footer() {
           textAlign: 'center'
         }}>
           <p style={{ color: '#9A9A9A', margin: 0, fontSize: '0.875rem' }}>
-            © 2024 Copoazú Labs. All rights reserved.
+            © 2024 Ganadero Digital. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link href="/privacy" style={{ color: '#9A9A9A', textDecoration: 'none', fontSize: '0.875rem' }}>

@@ -19,7 +19,7 @@ A modern, responsive digital platform for premium cattle trading and ganadería.
 
 ## 🎨 Color Palette
 
-The design uses the exclusive Digital Cattleman color scheme:
+The design uses the exclusive Ganadero Digital color scheme:
 
 ### Primary Colors
 - **🍫 Cáscara Marrón**: `#4B2E1E` - Brand identity, strong and elegant
@@ -289,7 +289,7 @@ npm run dev -- --port 3001
 - [x] Responsive design for all screen sizes
 - [x] Web3 wallet connection component
 - [x] Crypto payment integration
-- [x] Consistent Copoazú Labs branding
+- [x] Consistent Ganadero Digital branding
 - [x] Inline CSS styling for reliability
 
 🔄 **In Progress:**
@@ -321,7 +321,7 @@ We welcome contributions! Here's how you can help:
 ### Development Guidelines
 - Use TypeScript for all new components
 - Follow the existing inline CSS styling approach
-- Maintain the Copoazú Labs color palette
+- Maintain the Ganadero Digital color palette
 - Write clear, descriptive commit messages
 - Test on multiple screen sizes
 
@@ -349,6 +349,6 @@ If you encounter any issues or have questions:
 
 ---
 
-**Built with ❤️ by [Copoazú Labs](https://github.com/0xj4an)**
+**Built with ❤️ by [Ganadero Digital](https://github.com/0xj4an)**
 
 *Pioneering the future of fashion through Web3 technology*

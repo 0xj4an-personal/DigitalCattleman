@@ -178,10 +178,10 @@
     }
   },
   "about": {
-    "title": "Acerca de Digital Cattleman",
+    "title": "Acerca de Ganadero Digital",
     "subtitle": "Liderando la revolución digital del ganado con tecnología blockchain innovadora y prácticas ganaderas sostenibles",
     "comingSoon": "Próximamente",
-    "underDevelopment": "Nuestra página acerca de está en desarrollo. ¡Aprende más sobre Digital Cattleman y nuestra misión pronto!",
+    "underDevelopment": "Nuestra página acerca de está en desarrollo. ¡Aprende más sobre Ganadero Digital y nuestra misión pronto!",
     "mission": {
       "title": "Nuestra Misión",
       "description": "Conectar la brecha entre la ganadería tradicional y el futuro descentralizado, creando un mercado digital que empodere a ganaderos y compradores de ganado en todo el mundo. Creemos en democratizar el comercio de ganado a través de la tecnología blockchain mientras mantenemos los más altos estándares de calidad y transparencia."
@@ -271,7 +271,7 @@
     "newsletter": "Boletín",
     "subscribe": "Suscribirse",
     "emailPlaceholder": "Ingresa tu email",
-    "copyright": "© 2024 Digital Cattleman. Todos los derechos reservados."
+    "copyright": "© 2024 Ganadero Digital. Todos los derechos reservados."
   },
   "verification": {
     "title": "¡Obtén 10% de Descuento!",

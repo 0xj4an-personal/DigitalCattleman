@@ -1,6 +1,6 @@
 # 🌍 Environment Variables Configuration
 
-This document describes all environment variables used in the Digital Cattleman Cattle Trading Platform project.
+This document describes all environment variables used in the Ganadero Digital Cattle Trading Platform project.
 
 ## 📋 Quick Setup
 
@@ -24,7 +24,7 @@ This document describes all environment variables used in the Digital Cattleman 
 ### Application Configuration
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| `NEXT_PUBLIC_APP_NAME` | Application name | "Digital Cattleman" | No |
+| `NEXT_PUBLIC_APP_NAME` | Application name | "Ganadero Digital" | No |
 | `NEXT_PUBLIC_APP_DESCRIPTION` | Application description | "Digital Cattle Trading Platform - Premium Ganadería" | No |
 | `NEXT_PUBLIC_APP_URL` | Application URL | "http://localhost:3000" | Yes |
 | `NEXT_PUBLIC_APP_VERSION` | Application version | "0.1.0" | No |

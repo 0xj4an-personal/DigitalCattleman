@@ -178,10 +178,10 @@
     }
   },
   "about": {
-    "title": "About Digital Cattleman",
+    "title": "About Ganadero Digital",
     "subtitle": "Leading the digital cattle revolution with innovative blockchain technology and sustainable ranching practices",
     "comingSoon": "Coming Soon",
-    "underDevelopment": "Our about page is under development. Learn more about Copoazú Labs and our mission soon!",
+    "underDevelopment": "Our about page is under development. Learn more about Ganadero Digital and our mission soon!",
     "mission": {
       "title": "Our Mission",
       "description": "To bridge the gap between traditional cattle ranching and the decentralized future, creating a digital marketplace that empowers cattle ranchers and buyers worldwide. We believe in democratizing cattle trading through blockchain technology while maintaining the highest standards of quality and transparency."
@@ -271,7 +271,7 @@
     "newsletter": "Newsletter",
     "subscribe": "Subscribe",
     "emailPlaceholder": "Enter your email",
-    "copyright": "© 2024 Copoazú Labs. All rights reserved."
+    "copyright": "© 2024 Ganadero Digital. All rights reserved."
   },
   "verification": {
     "title": "Get 10% Discount!",
