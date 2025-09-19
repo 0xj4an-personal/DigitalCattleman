@@ -30,11 +30,11 @@
     "signup": "Registrarse"
   },
   "hero": {
-    "title": "Revolución de la Moda Web3",
-    "subtitle": "Descubre ropa y mercancía exclusiva con marca Web3. Conecta tu billetera, compra con cripto y únete a la revolución de la moda descentralizada.",
+    "title": "Revolución Digital del Ganado",
+    "subtitle": "Descubre ganado premium de las mejores fincas de Colombia. Conecta tu billetera, compra con cripto y únete a la revolución digital de la ganadería.",
     "shopNow": "Comprar Ahora",
     "exploreCollections": "Explorar Colecciones",
-    "merchandise": "Mercancía Web3",
+    "merchandise": "Ganado Premium",
     "tagline": "Compra con cripto, posee con orgullo"
   },
   "stats": {
@@ -44,8 +44,8 @@
     "yearsExperience": "Años de Experiencia"
   },
   "features": {
-    "title": "¿Por qué elegir Copoazú Labs?",
-    "subtitle": "Experimenta el futuro de la moda con tecnología Web3 de vanguardia",
+    "title": "¿Por qué elegir Digital Cattleman?",
+    "subtitle": "Experimenta el futuro del comercio de ganado con tecnología Web3 de vanguardia",
     "lightningFast": {
       "title": "Súper Rápido",
       "description": "Transacciones instantáneas con tecnología blockchain"
@@ -56,14 +56,14 @@
     },
     "communityDriven": {
       "title": "Impulsado por la Comunidad",
-      "description": "Únete a miles de entusiastas de Web3 en todo el mundo"
+      "description": "Únete a miles de ganaderos y compradores de ganado en todo el mundo"
     }
   },
   "products": {
-    "title": "Nuestros Productos",
-    "subtitle": "Explora nuestra colección exclusiva de ropa y accesorios de marca Web3",
-    "featuredTitle": "Productos Destacados",
-    "featuredSubtitle": "Descubre nuestra mercancía Web3 más popular",
+    "title": "Nuestro Ganado",
+    "subtitle": "Explora nuestra colección exclusiva de ganado premium de las mejores fincas de Colombia",
+    "featuredTitle": "Ganado Destacado",
+    "featuredSubtitle": "Descubre nuestro ganado premium más popular",
     "comingSoon": "Próximamente",
     "underDevelopment": "Nuestra página de productos está en desarrollo. ¡Mantente atento para increíbles mercancías Web3!",
     "viewAll": "Ver Todos los Productos",
@@ -176,14 +176,17 @@
       }
     },
     "categories": {
-      "cap": "Gorras",
-      "tshirt": "Camisetas",
-      "hoodie": "Sudaderas con Capucha"
+      "vaca": "Vacas",
+      "novilla": "Novillas",
+      "hembra": "Hembras",
+      "macho": "Machos",
+      "torete": "Toretes",
+      "toro": "Toros"
     }
   },
   "collections": {
-    "title": "Colecciones",
-    "subtitle": "Descubre colecciones curadas de mercancía Web3 de los mejores creadores",
+    "title": "Colecciones de Ganado",
+    "subtitle": "Descubre colecciones premium de ganado de las mejores fincas de Colombia",
     "comingSoon": "Próximamente",
     "underDevelopment": "Nuestra página de colecciones está en desarrollo. ¡Mantente atento para colecciones curadas de mercancía Web3!",
     "searchPlaceholder": "Buscar colecciones...",

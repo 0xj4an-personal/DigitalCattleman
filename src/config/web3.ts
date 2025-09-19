@@ -56,8 +56,8 @@ export const config = wagmiAdapter.wagmiConfig
 
 // Set up metadata
 export const metadata = {
-  name: 'Copoazú Labs',
-  description: 'Web3 Fashion & Merchandise Marketplace - Colombian Crypto Fashion',
+  name: 'Digital Cattleman',
+  description: 'Digital Cattle Trading Platform - Premium Ganadería',
   url: env.APP_URL,
   icons: [`${env.APP_URL}/favicon.ico`]
 }

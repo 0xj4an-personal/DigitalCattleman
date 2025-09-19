@@ -2,32 +2,32 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Copoazú Labs - Web3 Fashion & Merchandise",
-  description: "Discover exclusive Web3 branded clothing and merchandise. Connect your wallet, shop with crypto, and join the decentralized fashion revolution.",
-  keywords: ["Web3", "fashion", "merchandise", "crypto", "blockchain", "clothing", "NFT", "decentralized"],
-  authors: [{ name: "Copoazú Labs" }],
-  creator: "Copoazú Labs",
-  publisher: "Copoazú Labs",
+  title: "Digital Cattleman - Premium Cattle Trading Platform",
+  description: "Discover premium cattle from Colombia's finest ranches. Connect your wallet, buy with crypto, and join the digital ganadería revolution.",
+  keywords: ["cattle", "ganadería", "crypto", "blockchain", "cattle trading", "Web3", "digital farming", "livestock"],
+  authors: [{ name: "Digital Cattleman" }],
+  creator: "Digital Cattleman",
+  publisher: "Digital Cattleman",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://copoazulabs.com'),
+  metadataBase: new URL('https://digitalcattleman.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Copoazú Labs - Web3 Fashion & Merchandise",
-    description: "Discover exclusive Web3 branded clothing and merchandise. Connect your wallet, shop with crypto, and join the decentralized fashion revolution.",
-    url: 'https://copoazulabs.com',
-    siteName: 'Copoazú Labs',
+    title: "Digital Cattleman - Premium Cattle Trading Platform",
+    description: "Discover premium cattle from Colombia's finest ranches. Connect your wallet, buy with crypto, and join the digital ganadería revolution.",
+    url: 'https://digitalcattleman.com',
+    siteName: 'Digital Cattleman',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Copoazú Labs - Web3 Fashion & Merchandise',
+        alt: 'Digital Cattleman - Premium Cattle Trading Platform',
       },
     ],
     locale: 'en_US',
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Copoazú Labs - Web3 Fashion & Merchandise",
-    description: "Discover exclusive Web3 branded clothing and merchandise. Connect your wallet, shop with crypto, and join the decentralized fashion revolution.",
+    title: "Digital Cattleman - Premium Cattle Trading Platform",
+    description: "Discover premium cattle from Colombia's finest ranches. Connect your wallet, buy with crypto, and join the digital ganadería revolution.",
     images: ['/og-image.jpg'],
   },
   robots: {

@@ -1,25 +1,25 @@
-# 🌿 Copoazú Labs - Web3 Fashion & Merchandise
+# 🐄 Digital Cattleman - Premium Cattle Trading Platform
 
-A modern, responsive e-commerce platform for Web3 branded clothing and merchandise. Built with Next.js 15, TypeScript, and inline CSS styling, featuring crypto payments and wallet integration.
+A modern, responsive digital platform for premium cattle trading and ganadería. Built with Next.js 15, TypeScript, and inline CSS styling, featuring crypto payments and wallet integration.
 
 ## ✨ Features
 
-- **🎨 Beautiful Design**: Custom Copoazú Labs color palette with modern UI/UX
+- **🎨 Beautiful Design**: Custom Digital Cattleman color palette with modern UI/UX
 - **🔗 Web3 Integration**: Wallet connection and crypto payment with cCOP tokens
 - **📱 Responsive**: Mobile-first design that works on all devices
-- **🛍️ E-commerce**: Product catalog, search, filtering, and shopping cart
+- **🐄 Cattle Trading**: Premium cattle catalog, search, filtering, and shopping cart
 - **⚡ Fast**: Built with Next.js 15 with server-side rendering and optimized performance
 - **🎯 TypeScript**: Full type safety and better developer experience
 - **🎨 Inline Styling**: Consistent styling using inline CSS for reliability
 - **🌐 Multi-page**: Complete website with Home, About, Products, and Collections pages
-- **🏷️ Collections System**: 6 themed collections (Gaming, ReFi, DeFi, Governance, Coding, Degen)
+- **🏷️ Collections System**: 8 cattle collections (Vacas Paridas, Vacas Horras, Novillas de Vientre, Hembras de Levante, Machos de Levante, Machos de Ceba, Toretes, Toros)
 - **🔄 Server-Side Filtering**: Instant product filtering without client-side delays
 - **🌙 Dark Mode**: Seamless theme switching with proper hydration handling
 - **🌍 Internationalization**: Multi-language support (English/Spanish)
 
 ## 🎨 Color Palette
 
-The design uses the exclusive Copoazú Labs color scheme:
+The design uses the exclusive Digital Cattleman color scheme:
 
 ### Primary Colors
 - **🍫 Cáscara Marrón**: `#4B2E1E` - Brand identity, strong and elegant

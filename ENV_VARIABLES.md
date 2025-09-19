@@ -1,6 +1,6 @@
 # 🌍 Environment Variables Configuration
 
-This document describes all environment variables used in the Copoazú Labs Web3 Fashion Marketplace project.
+This document describes all environment variables used in the Digital Cattleman Cattle Trading Platform project.
 
 ## 📋 Quick Setup
 
@@ -24,8 +24,8 @@ This document describes all environment variables used in the Copoazú Labs Web3
 ### Application Configuration
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| `NEXT_PUBLIC_APP_NAME` | Application name | "Copoazú Labs" | No |
-| `NEXT_PUBLIC_APP_DESCRIPTION` | Application description | "Web3 Fashion & Merchandise Marketplace" | No |
+| `NEXT_PUBLIC_APP_NAME` | Application name | "Digital Cattleman" | No |
+| `NEXT_PUBLIC_APP_DESCRIPTION` | Application description | "Digital Cattle Trading Platform - Premium Ganadería" | No |
 | `NEXT_PUBLIC_APP_URL` | Application URL | "http://localhost:3000" | Yes |
 | `NEXT_PUBLIC_APP_VERSION` | Application version | "0.1.0" | No |
 
