@@ -3,16 +3,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ganadero Digital Color Palette */
+/* Ganadero Digital - Nature-Inspired Color Palette */
 :root {
-  --cascara-marron: #4B2E1E;
-  --pulpa-crema: #F5F1E7;
-  --verde-selva: #3E7C4A;
-  --amarillo-amazonico: #E6B450;
-  --rosa-tropical: #D88FA0;
-  --negro-suave: #1C1C1C;
-  --gris-ceniza: #9A9A9A;
-  --blanco: #FFFFFF;
+  /* Earth Tones - Primary Colors */
+  --earth-brown: #5D4E37;        /* Rich soil brown */
+  --sage-green: #8FBC8F;         /* Sage green - nature's calm */
+  --forest-green: #2D5016;       /* Deep forest green */
+  --wheat-gold: #D2B48C;         /* Wheat field gold */
+  
+  /* Natural Backgrounds */
+  --cream-natural: #F5F5DC;      /* Natural cream */
+  --soil-light: #F4F1EB;         /* Light soil tone */
+  --bark-dark: #3C2415;          /* Tree bark dark */
+  --leaf-shadow: #1A2E1A;        /* Deep leaf shadow */
+  
+  /* Accent Colors */
+  --sunset-orange: #CD853F;      /* Sunset orange */
+  --sky-blue: #87CEEB;           /* Sky blue */
+  --rose-quartz: #C19A6B;        /* Natural rose quartz */
+  --stone-gray: #696969;         /* Stone gray */
+  
+  /* Text Colors */
+  --charcoal: #36454F;           /* Charcoal for text */
+  --moss-green: #556B2F;         /* Moss green accent */
+  --white-natural: #FFFEF7;      /* Natural white */
 }
 
 * {
@@ -30,56 +44,80 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  background-color: var(--pulpa-crema);
-  color: var(--negro-suave);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background: linear-gradient(135deg, var(--cream-natural) 0%, var(--soil-light) 100%);
+  background-attachment: fixed;
+  color: var(--charcoal);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
 
 .dark body {
-  background-color: var(--negro-suave);
-  color: var(--pulpa-crema);
+  background: linear-gradient(135deg, var(--bark-dark) 0%, var(--leaf-shadow) 100%);
+  background-attachment: fixed;
+  color: var(--white-natural);
 }
 
-/* Scrollbar Styling */
+/* Nature-Inspired Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--pulpa-crema);
-  transition: background-color 0.2s ease;
+  background: var(--soil-light);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: var(--negro-suave);
+  background: var(--bark-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--verde-selva);
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  background: linear-gradient(180deg, var(--sage-green) 0%, var(--forest-green) 100%);
+  border-radius: 8px;
+  border: 2px solid var(--soil-light);
+  transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--cascara-marron);
+  background: linear-gradient(180deg, var(--forest-green) 0%, var(--earth-brown) 100%);
+  border-color: var(--wheat-gold);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  border-color: var(--bark-dark);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: var(--gris-ceniza);
+  background: linear-gradient(180deg, var(--wheat-gold) 0%, var(--sunset-orange) 100%);
+  border-color: var(--sage-green);
 }
 
-/* Selection Styling */
+/* Nature-Inspired Selection Styling */
 ::selection {
-  background-color: var(--amarillo-amazonico);
-  color: var(--negro-suave);
+  background: linear-gradient(90deg, var(--wheat-gold) 0%, var(--sunset-orange) 100%);
+  color: var(--charcoal);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Focus Styling */
+.dark ::selection {
+  background: linear-gradient(90deg, var(--sage-green) 0%, var(--forest-green) 100%);
+  color: var(--white-natural);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Nature-Inspired Focus Styling */
 :focus {
-  outline: 2px solid var(--verde-selva);
-  outline-offset: 2px;
+  outline: 2px solid var(--sage-green);
+  outline-offset: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px rgba(143, 188, 143, 0.2);
+}
+
+.dark :focus {
+  outline-color: var(--wheat-gold);
+  box-shadow: 0 0 0 4px rgba(210, 180, 140, 0.2);
 }
 
 /* Button Transitions */
@@ -92,14 +130,73 @@ a {
   transition: color 0.2s ease;
 }
 
-/* Card Hover Effects */
+/* Nature-Inspired Card Hover Effects */
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 
+    0 12px 30px rgba(45, 80, 22, 0.15),
+    0 4px 12px rgba(45, 80, 22, 0.1);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 
+    0 12px 30px rgba(210, 180, 140, 0.2),
+    0 4px 12px rgba(210, 180, 140, 0.1);
+}
+
+/* Natural Texture Overlay */
+.natural-texture {
+  position: relative;
+  overflow: hidden;
+}
+
+.natural-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(143, 188, 143, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(210, 180, 140, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(205, 133, 63, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Organic Border Radius */
+.organic-border {
+  border-radius: 16px 8px 16px 8px;
+}
+
+/* Nature Pattern Background */
+.nature-pattern {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(143, 188, 143, 0.3) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Earth Gradient */
+.earth-gradient {
+  background: linear-gradient(135deg, 
+    var(--earth-brown) 0%, 
+    var(--forest-green) 50%, 
+    var(--sage-green) 100%);
+}
+
+/* Sky Gradient */
+.sky-gradient {
+  background: linear-gradient(135deg, 
+    var(--sky-blue) 0%, 
+    var(--cream-natural) 50%, 
+    var(--wheat-gold) 100%);
 }
 
 /* Mobile-specific improvements */

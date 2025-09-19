@@ -48,33 +48,37 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F1E7] dark:bg-[#1C1C1C] text-[#1C1C1C] dark:text-[#F5F1E7] transition-colors duration-200">
+    <div className="min-h-screen bg-cream-natural dark:bg-bark-dark text-charcoal dark:text-white-natural transition-all duration-500">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-12 bg-gradient-to-br from-[#F5F1E7] via-white to-[#F5F1E7] dark:from-[#1C1C1C] dark:via-gray-800 dark:to-[#1C1C1C] transition-colors duration-200">
-        <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233E7C4A' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
+      <section className="relative overflow-hidden py-16 bg-nature-gradient dark:bg-forest-gradient transition-all duration-500">
+        {/* Nature Pattern Overlay */}
+        <div className="absolute inset-0 nature-pattern opacity-20"></div>
+        
+        {/* Floating Nature Elements */}
+        <div className="absolute top-10 left-10 w-20 h-20 bg-sage-green opacity-10 rounded-full animate-float"></div>
+        <div className="absolute top-32 right-16 w-16 h-16 bg-wheat-gold opacity-15 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-sunset-orange opacity-10 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="flex items-center gap-8 flex-wrap">
             {/* Left Content */}
             <div className="flex-1 min-w-80">
-              <h1 className="text-4xl font-extrabold leading-tight mb-4 bg-gradient-to-br from-[#1C1C1C] to-[#3E7C4A] dark:from-[#F5F1E7] dark:to-[#3E7C4A] bg-clip-text text-transparent">
+              <h1 className="text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-br from-earth-brown via-forest-green to-sage-green dark:from-wheat-gold dark:via-sage-green dark:to-sky-blue bg-clip-text text-transparent animate-fade-in">
                 {t('hero.title')}
               </h1>
-              <p className="text-base text-gray-600 dark:text-gray-400 mb-6 leading-relaxed max-w-lg">
+              <p className="text-lg text-charcoal dark:text-white-natural mb-8 leading-relaxed max-w-lg animate-slide-up">
                 {t('hero.subtitle')}
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="flex flex-col gap-4 sm:flex-row animate-slide-up">
                 <Link href="/products">
-                  <button className="inline-flex items-center px-6 py-3 bg-[#3E7C4A] text-white font-semibold rounded-lg border-none cursor-pointer transition-all duration-300 shadow-lg hover:bg-[#2d5f3a] hover:shadow-xl text-sm">
-                    {t('hero.shopNow')}
-                    <ArrowRight className="ml-1.5 w-4.5 h-4.5" />
+                  <button className="group inline-flex items-center px-8 py-4 bg-earth-gradient text-white-natural font-semibold rounded-organic border-none cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-base">
+                    <span className="mr-2">{t('hero.shopNow')}</span>
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </button>
                 </Link>
                 <Link href="/collections">
-                  <button className="inline-flex items-center px-6 py-3 bg-transparent text-[#1C1C1C] dark:text-[#F5F1E7] font-semibold rounded-lg border-2 border-[#1C1C1C] dark:border-[#F5F1E7] cursor-pointer transition-all duration-300 hover:bg-[#1C1C1C] hover:text-[#F5F1E7] dark:hover:bg-[#F5F1E7] dark:hover:text-[#1C1C1C] text-sm">
-                    <Users className="mr-1.5 w-4.5 h-4.5" />
+                  <button className="group inline-flex items-center px-8 py-4 bg-transparent text-charcoal dark:text-white-natural font-semibold rounded-organic border-2 border-sage-green dark:border-wheat-gold cursor-pointer transition-all duration-300 hover:bg-sage-green hover:text-white-natural dark:hover:bg-wheat-gold dark:hover:text-charcoal text-base">
+                    <Users className="mr-2 w-5 h-5" />
                     {t('hero.exploreCollections')}
                   </button>
                 </Link>
@@ -83,20 +87,20 @@ export default function Home() {
             
             {/* Right Visual */}
             <div className="flex-none w-72 max-w-72">
-              <div className="w-full h-64 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl flex items-center justify-center transition-colors duration-200">
-                <div className="text-center">
-                  {/* Logo */}
-                  <div className="mb-4">
+              <div className="w-full h-72 bg-white-natural dark:bg-leaf-shadow rounded-organic shadow-2xl flex items-center justify-center transition-all duration-500 natural-texture card-hover">
+                <div className="text-center relative z-10">
+                  {/* Logo with Nature Glow */}
+                  <div className="mb-6 animate-nature-glow">
                     <Logo 
-                      width={80} 
-                      height={80} 
-                      className="rounded-xl mx-auto"
+                      width={90} 
+                      height={90} 
+                      className="rounded-xl mx-auto drop-shadow-lg"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold text-[#1C1C1C] dark:text-[#F5F1E7] mb-1 transition-colors duration-200">
+                  <h3 className="text-xl font-bold text-charcoal dark:text-white-natural mb-2 transition-colors duration-300">
                     Premium Cattle
                   </h3>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+                  <p className="text-moss-green dark:text-sage-green text-sm font-medium transition-colors duration-300">
                     Buy with crypto, own with pride
                   </p>
                 </div>
@@ -107,38 +111,42 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-extrabold text-[#3E7C4A] mb-2">
+      <section className="py-20 bg-sky-gradient dark:bg-forest-gradient transition-all duration-500 relative overflow-hidden">
+        {/* Nature Elements */}
+        <div className="absolute top-5 right-20 w-16 h-16 bg-sage-green opacity-20 rounded-full animate-float"></div>
+        <div className="absolute bottom-10 left-20 w-12 h-12 bg-wheat-gold opacity-25 rounded-full animate-float" style={{animationDelay: '1.5s'}}></div>
+        
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+            <div className="text-center group">
+              <div className="text-5xl font-extrabold bg-gradient-to-br from-forest-green to-sage-green dark:from-wheat-gold dark:to-sunset-orange bg-clip-text text-transparent mb-3 transition-all duration-300 group-hover:scale-110">
                 10K+
               </div>
-              <div className="text-base text-gray-500 dark:text-gray-400 font-medium">
+              <div className="text-lg text-charcoal dark:text-white-natural font-semibold transition-colors duration-300">
                 {t('stats.happyCustomers')}
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-extrabold text-[#3E7C4A] mb-2">
+            <div className="text-center group">
+              <div className="text-5xl font-extrabold bg-gradient-to-br from-forest-green to-sage-green dark:from-wheat-gold dark:to-sunset-orange bg-clip-text text-transparent mb-3 transition-all duration-300 group-hover:scale-110">
                 50K+
               </div>
-              <div className="text-base text-gray-500 dark:text-gray-400 font-medium">
+              <div className="text-lg text-charcoal dark:text-white-natural font-semibold transition-colors duration-300">
                 {t('stats.productsSold')}
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-extrabold text-[#3E7C4A] mb-2">
+            <div className="text-center group">
+              <div className="text-5xl font-extrabold bg-gradient-to-br from-forest-green to-sage-green dark:from-wheat-gold dark:to-sunset-orange bg-clip-text text-transparent mb-3 transition-all duration-300 group-hover:scale-110">
                 25+
               </div>
-              <div className="text-base text-gray-500 dark:text-gray-400 font-medium">
+              <div className="text-lg text-charcoal dark:text-white-natural font-semibold transition-colors duration-300">
                 {t('stats.countries')}
               </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-extrabold text-[#3E7C4A] mb-2">
+            <div className="text-center group">
+              <div className="text-5xl font-extrabold bg-gradient-to-br from-forest-green to-sage-green dark:from-wheat-gold dark:to-sunset-orange bg-clip-text text-transparent mb-3 transition-all duration-300 group-hover:scale-110">
                 3+
               </div>
-              <div className="text-base text-gray-500 dark:text-gray-400 font-medium">
+              <div className="text-lg text-charcoal dark:text-white-natural font-semibold transition-colors duration-300">
                 {t('stats.yearsExperience')}
               </div>
             </div>
