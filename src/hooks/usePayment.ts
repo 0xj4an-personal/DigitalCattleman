@@ -51,7 +51,7 @@ export function usePayment() {
         args: [PAYMENT_CONFIG.receiverAddress, amountInWei],
       });
 
-      // Add Divvi referral tag to the transaction data
+      // Add referral tag to the transaction data
       const dataWithReferral = addReferralToTransaction(transferData);
 
       // Use wallet client for custom transaction with referral data
@@ -66,11 +66,11 @@ export function usePayment() {
           setTxHash(hash);
           setPaymentStatus('success');
           
-          // Submit referral to Divvi after successful transaction
+          // Submit referral after successful transaction
           try {
             await submitReferralTransaction(hash);
           } catch (referralError) {
-            console.error('Failed to submit referral to Divvi:', referralError);
+            console.error('Failed to submit referral:', referralError);
             // Don't fail the payment if referral submission fails
           }
         } catch (error) {
@@ -88,11 +88,11 @@ export function usePayment() {
             setTxHash(hash);
             setPaymentStatus('success');
             
-            // Submit referral to Divvi after successful transaction
+            // Submit referral after successful transaction
             try {
               await submitReferralTransaction(hash);
             } catch (referralError) {
-              console.error('Failed to submit referral to Divvi:', referralError);
+              console.error('Failed to submit referral:', referralError);
               // Don't fail the payment if referral submission fails
             }
           },

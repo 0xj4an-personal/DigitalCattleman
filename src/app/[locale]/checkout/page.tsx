@@ -9,7 +9,6 @@ import { ArrowLeft, CreditCard, Wallet } from 'lucide-react';
 import CeloPayment from '@/components/CeloPayment';
 import VerificationButton from '@/components/VerificationButton';
 import VerificationPopup from '@/components/VerificationPopup';
-import DivviStatus from '@/components/DivviStatus';
 
 export default function CheckoutPage() {
   const t = useTranslations('checkout');
@@ -161,8 +160,6 @@ export default function CheckoutPage() {
               </div>
             )}
 
-            {/* Divvi Status */}
-            <DivviStatus />
 
             {/* Payment Method */}
             <div className="mb-6">
