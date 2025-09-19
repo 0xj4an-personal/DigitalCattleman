@@ -6,6 +6,7 @@ export interface Product {
   rating: number;
   reviewCount: number;
   image: string;
+  video?: string; // Optional video URL
   categoryKey: string; // Key for translation (cap, tshirt, hoodie)
   collectionId: string; // ID of the collection
   isNew?: boolean;
@@ -21,6 +22,7 @@ export const allProducts: Product[] = [
     rating: 4.8,
     reviewCount: 15,
     image: '/assets/VacasParidas.png',
+    video: '/assets/Video1.mp4',
     categoryKey: 'lote',
     collectionId: '2', // Vacas Paridas Collection
     isBestSeller: true,

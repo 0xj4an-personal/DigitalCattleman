@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Heart, ShoppingCart, Star, Eye, Shield } from 'lucide-react';
+import { Heart, ShoppingCart, Star, Eye, Shield, Play, Pause } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useCart } from '@/contexts/CartContext';
 import { useVerification } from '@/contexts/VerificationContext';
@@ -18,6 +18,7 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
   const [isHovered, setIsHovered] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [showActions, setShowActions] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const t = useTranslations('products');
   const tCollections = useTranslations('collections');
   const { addItem } = useCart();
@@ -44,6 +45,14 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
     onToggleWishlist?.(product);
   };
 
+  const handleVideoToggle = () => {
+    setIsVideoPlaying(!isVideoPlaying);
+  };
+
+  const handleVideoEnd = () => {
+    setIsVideoPlaying(false);
+  };
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -64,35 +73,82 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Product Image */}
+      {/* Product Image/Video */}
       <div style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden' }}>
-        <img
-          src={product.image}
-          alt={t(`productItems.${product.nameKey}.name`)}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover'
-          }}
-          onError={(e) => {
-            // Fallback to a simple colored div if image fails to load
-            const target = e.target as HTMLImageElement;
-            target.style.display = 'none';
-            const parent = target.parentElement;
-            if (parent) {
-              parent.innerHTML = `
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #F5F1E7 0%, #E5E5E5 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #9A9A9A; font-family: Arial, sans-serif;">
-                  <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background-color: #3E7C4A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                      <span style="font-size: 1.5rem; font-weight: bold; color: #FFFFFF;">${t(`productItems.${product.nameKey}.name`).charAt(0)}</span>
+        {product.video ? (
+          <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+            <video
+              src={product.video}
+              poster={product.image}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+              muted
+              loop
+              playsInline
+              autoPlay={isVideoPlaying}
+              onEnded={handleVideoEnd}
+              onError={(e) => {
+                // Fallback to image if video fails
+                const target = e.target as HTMLVideoElement;
+                target.style.display = 'none';
+                const parent = target.parentElement;
+                if (parent) {
+                  parent.innerHTML = `
+                    <img
+                      src="${product.image}"
+                      alt="${t(`productItems.${product.nameKey}.name`)}"
+                      style="width: 100%; height: 100%; object-fit: cover;"
+                    />
+                  `;
+                }
+              }}
+            />
+            {/* Video Play/Pause Overlay */}
+            <div 
+              className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-20 hover:bg-opacity-30 transition-all duration-200"
+              onClick={handleVideoToggle}
+            >
+              <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-100 transition-all duration-200">
+                {isVideoPlaying ? (
+                  <Pause className="w-6 h-6 text-gray-800" />
+                ) : (
+                  <Play className="w-6 h-6 text-gray-800 ml-1" />
+                )}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <img
+            src={product.image}
+            alt={t(`productItems.${product.nameKey}.name`)}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+            onError={(e) => {
+              // Fallback to a simple colored div if image fails to load
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const parent = target.parentElement;
+              if (parent) {
+                parent.innerHTML = `
+                  <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #F5F1E7 0%, #E5E5E5 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #9A9A9A; font-family: Arial, sans-serif;">
+                    <div style="text-align: center;">
+                      <div style="width: 80px; height: 80px; background-color: #3E7C4A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <span style="font-size: 1.5rem; font-weight: bold; color: #FFFFFF;">${t(`productItems.${product.nameKey}.name`).charAt(0)}</span>
+                      </div>
+                      <p style="font-size: 0.875rem; color: #9A9A9A; margin: 0;">${t(`categories.${product.categoryKey}`)}</p>
                     </div>
-                    <p style="font-size: 0.875rem; color: #9A9A9A; margin: 0;">${t(`categories.${product.categoryKey}`)}</p>
                   </div>
-                </div>
-              `;
-            }
-          }}
-        />
+                `;
+              }
+            }}
+          />
+        )}
 
         {/* Overlay Actions - Show on hover (desktop) or always (mobile) */}
         {(isHovered || showActions) && (
@@ -129,6 +185,12 @@ export default function ProductCard({ product, onAddToCart, onToggleWishlist }: 
 
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-2">
+          {product.video && (
+            <span className="bg-blue-500 text-white px-2 py-1 rounded-xl text-xs font-medium flex items-center gap-1">
+              <Play className="w-3 h-3" />
+              Video
+            </span>
+          )}
           {product.isNew && (
             <span className="bg-[#3E7C4A] text-white px-2 py-1 rounded-xl text-xs font-medium">
               {t('new')}
