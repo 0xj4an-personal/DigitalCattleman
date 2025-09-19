@@ -160,52 +160,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Product Video Section */}
-      <section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-charcoal dark:text-white-natural mb-4 transition-colors duration-300">
-              {t('hero.lote001Name')}
-            </h2>
-            <p className="text-lg text-moss-green dark:text-sage-green transition-colors duration-300">
-              {t('hero.lote001Description')}
-            </p>
-          </div>
-
-          {/* Video Section */}
-          <div className="bg-white-natural dark:bg-leaf-shadow rounded-organic shadow-lg overflow-hidden mb-12 transition-all duration-500 natural-texture">
-            <div className="aspect-video bg-soil-light dark:bg-bark-dark">
-              <video
-                controls
-                className="w-full h-full object-cover"
-                poster="/assets/VacasParidas.png"
-              >
-                <source src="/assets/Video1.mp4" type="video/mp4" />
-                {t('common.videoNotSupported', 'Tu navegador no soporta el elemento de video.')}
-              </video>
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-charcoal dark:text-white-natural mb-3 transition-colors duration-300">
-                {t('hero.lote001Name')}
-              </h3>
-              <p className="text-moss-green dark:text-sage-green mb-4 transition-colors duration-300">
-                {t('hero.lote001Description')}
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-forest-green dark:text-sage-green">
-                  $5.000.000 cCOP
-                </span>
-                <Link href="/products?collection=2">
-                  <button className="px-6 py-2 bg-forest-green text-white-natural rounded-organic hover:bg-dark-green transition-all duration-300">
-                    {t('common.viewDetails', 'Ver Detalles')}
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Products Section */}
       <section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4">
