@@ -35,9 +35,10 @@ export function usePayment() {
       // Check if user has enough cCOP balance
       if (!hasEnoughCCOP(amount)) {
         const availableBalance = ccopBalanceRaw ? parseFloat(ccopBalanceRaw.formatted) : 0;
-        throw new Error(
-          `Insufficient cCOP balance. Required: ${amount.toLocaleString('es-CO')} cCOP, Available: ${availableBalance.toLocaleString('es-CO')} cCOP`
-        );
+        const errorMessage = `Saldo insuficiente de cCOP. Requerido: ${amount.toLocaleString('es-CO')} cCOP, Disponible: ${availableBalance.toLocaleString('es-CO')} cCOP. Por favor, recarga tu wallet con más cCOP para continuar.`;
+        setError(errorMessage);
+        setPaymentStatus('error');
+        throw new Error(errorMessage);
       }
 
       // Convert amount to wei (cCOP has 18 decimals)
@@ -103,7 +104,22 @@ export function usePayment() {
     } catch (error: any) {
       console.error('Payment error:', error);
       setPaymentStatus('error');
-      const errorMessage = error?.message || 'Payment failed';
+      
+      // Handle different types of errors
+      let errorMessage = 'Error en el pago. Por favor, inténtalo de nuevo.';
+      
+      if (error?.message?.includes('Insufficient cCOP balance') || error?.message?.includes('Saldo insuficiente')) {
+        errorMessage = error.message;
+      } else if (error?.message?.includes('User rejected') || error?.message?.includes('rejected')) {
+        errorMessage = 'Transacción cancelada por el usuario.';
+      } else if (error?.message?.includes('insufficient funds')) {
+        errorMessage = 'Fondos insuficientes para completar la transacción.';
+      } else if (error?.message?.includes('network')) {
+        errorMessage = 'Error de red. Por favor, verifica tu conexión e inténtalo de nuevo.';
+      } else if (error?.message) {
+        errorMessage = error.message;
+      }
+      
       setError(errorMessage);
       throw new Error(errorMessage);
     } finally {
@@ -116,6 +132,21 @@ export function usePayment() {
     setTxHash('');
     setError(null);
     setIsProcessing(false);
+  };
+
+  // Utility function to check if payment is possible
+  const canMakePayment = (amount: number) => {
+    return hasEnoughCCOP(amount);
+  };
+
+  // Get balance info for display
+  const getBalanceInfo = () => {
+    const availableBalance = ccopBalanceRaw ? parseFloat(ccopBalanceRaw.formatted) : 0;
+    return {
+      available: availableBalance,
+      formatted: availableBalance.toLocaleString('es-CO'),
+      symbol: 'cCOP'
+    };
   };
 
   return {
@@ -135,5 +166,10 @@ export function usePayment() {
     formatAmount: (amount: number) => amount.toLocaleString('es-CO'),
     getExplorerUrl: (hash: string) =>
       `${PAYMENT_CONFIG.network.blockExplorers?.default.url}/tx/${hash}`,
+    
+    // Balance utilities
+    canMakePayment,
+    getBalanceInfo,
+    hasEnoughBalance: hasEnoughCCOP,
   };
 }

@@ -25,6 +25,9 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
     payWithCCOP,
     getExplorerUrl,
     formatAmount,
+    canMakePayment,
+    getBalanceInfo,
+    hasEnoughBalance,
   } = usePayment();
 
   const handleCeloPayment = async () => {
@@ -115,8 +118,16 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
           <span style={{ fontSize: '14px', color: '#6B7280' }}>Your cCOP:</span>
-          <span style={{ fontWeight: '600', color: '#111827' }}>
+          <span style={{ 
+            fontWeight: '600', 
+            color: hasEnoughBalance(totalPrice) ? '#059669' : '#DC2626'
+          }}>
             {ccopBalance}
+            {!hasEnoughBalance(totalPrice) && (
+              <span style={{ fontSize: '12px', marginLeft: '4px', color: '#DC2626' }}>
+                (Insufficient)
+              </span>
+            )}
           </span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -181,24 +192,49 @@ export default function CeloPayment({ totalPrice, onPaymentSuccess, onPaymentErr
         </div>
       )}
 
+      {isConnected && !canMakePayment(totalPrice) && (
+        <div style={{
+          backgroundColor: '#FFFBEB',
+          border: '1px solid #FCD34D',
+          borderRadius: '6px',
+          padding: '12px',
+          marginBottom: '16px'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <AlertCircle className="w-4 h-4 text-yellow-600" />
+            <div>
+              <div style={{ fontSize: '14px', fontWeight: '600', color: '#92400E', marginBottom: '4px' }}>
+                Fondos Insuficientes
+              </div>
+              <div style={{ fontSize: '13px', color: '#92400E' }}>
+                Necesitas {formatAmount(totalPrice)} cCOP para completar esta compra. 
+                Recarga tu wallet con más cCOP para continuar.
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <button
         onClick={handleCeloPayment}
-        disabled={isProcessing || isConfirming || paymentStatus === 'success'}
+        disabled={isProcessing || isConfirming || paymentStatus === 'success' || (isConnected && !canMakePayment(totalPrice))}
         style={{
           width: '100%',
           padding: '12px 24px',
-          backgroundColor: paymentStatus === 'success' ? '#10B981' : isConnected ? '#059669' : '#6B7280',
+          backgroundColor: paymentStatus === 'success' ? '#10B981' : 
+                          isConnected && !canMakePayment(totalPrice) ? '#DC2626' :
+                          isConnected ? '#059669' : '#6B7280',
           color: '#FFFFFF',
           border: 'none',
           borderRadius: '8px',
           fontSize: '16px',
           fontWeight: '600',
-          cursor: isProcessing || isConfirming || paymentStatus === 'success' ? 'not-allowed' : 'pointer',
-          opacity: isProcessing || isConfirming || paymentStatus === 'success' ? 0.7 : 1,
+          cursor: isProcessing || isConfirming || paymentStatus === 'success' || (isConnected && !canMakePayment(totalPrice)) ? 'not-allowed' : 'pointer',
+          opacity: isProcessing || isConfirming || paymentStatus === 'success' || (isConnected && !canMakePayment(totalPrice)) ? 0.7 : 1,
           transition: 'all 0.2s ease'
         }}
       >
-        {getStatusText()}
+        {isConnected && !canMakePayment(totalPrice) ? 'Insufficient cCOP Balance' : getStatusText()}
       </button>
     </div>
   );
