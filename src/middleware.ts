@@ -50,7 +50,8 @@ function detectLanguageFromHeaders(request: NextRequest): string {
 const intlMiddleware = createMiddleware({
   locales: ['en', 'es'],
   defaultLocale: 'en',
-  localePrefix: 'always'
+  localePrefix: 'always',
+  localeDetection: true
 });
 
 export default function middleware(request: NextRequest) {

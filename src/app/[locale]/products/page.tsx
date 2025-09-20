@@ -3,13 +3,16 @@ import { getTranslations } from 'next-intl/server';
 import { allProducts, getCollections, getCategories, getProductsByCollection, getProductsByCategory } from '@/data/products';
 import { allCollections } from '@/data/collections';
 import ProductsClient from './ProductsClient';
+import { getProductsTranslations } from '@/lib/translations';
 
 interface ProductsPageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default async function ProductsPage({ searchParams }: ProductsPageProps) {
+export default async function ProductsPage({ searchParams, params }: ProductsPageProps & { params: Promise<{ locale: string }> }) {
+  const resolvedParams = await params;
   const t = await getTranslations('products');
+  const translations = getProductsTranslations(resolvedParams.locale);
 
   // Await searchParams in Next.js 15
   const resolvedSearchParams = await searchParams;
@@ -54,10 +57,10 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-3xl font-bold text-[#1C1C1C] dark:text-[#F5F1E7] mb-3 transition-colors duration-200">
-            {t('title')}
+            {translations.title}
           </h1>
           <p className="text-base text-gray-600 dark:text-gray-400 mb-6 transition-colors duration-200">
-            {t('subtitle')}
+            {translations.subtitle}
           </p>
         </div>
 
