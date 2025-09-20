@@ -18,8 +18,8 @@ export default function CollectionsPage() {
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
 
   const handleCollectionClick = (collectionId: string) => {
-    // Navigate to products page with collection filter
-    router.push(`/products?collection=${collectionId}`);
+    // Navigate to individual collection page
+    router.push(`/collections/${collectionId}`);
   };
 
   // Helper function to get translated text for filtering

@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Zap, Shield, Users, ShoppingCart, Wallet } from 'lucide-react';
+import { ArrowRight, Zap, Shield, Users, ShoppingCart, Wallet, Star, Eye, Heart } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import ProductCard from '@/components/ProductCard';
@@ -10,9 +10,11 @@ import WalletConnect from '@/components/WalletConnect';
 import { useTranslations } from 'next-intl';
 import { useVerification } from '@/contexts/VerificationContext';
 import { getFeaturedProducts } from '@/data/products';
+import { getFeaturedCollections } from '@/data/collections';
 
-// Get featured products from centralized data
+// Get featured products and collections from centralized data
 const featuredProducts = getFeaturedProducts();
+const featuredCollections = getFeaturedCollections();
 
 
 export default function Home() {
@@ -64,22 +66,22 @@ export default function Home() {
             {/* Left Content */}
             <div className="flex-1 min-w-80">
               <h1 className="text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-br from-earth-brown via-forest-green to-sage-green dark:from-wheat-gold dark:via-sage-green dark:to-sky-blue bg-clip-text text-transparent animate-fade-in">
-                {t('hero.title')}
+                Colecciones Premium de Ganado
               </h1>
               <p className="text-lg text-charcoal dark:text-white-natural mb-8 leading-relaxed max-w-lg animate-slide-up">
-                {t('hero.subtitle')}
+                Descubre nuestras colecciones exclusivas de ganado premium. Cada colección está cuidadosamente seleccionada para ofrecerte la mejor calidad y genética.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row animate-slide-up">
-                <Link href="/products">
+                <Link href="/collections">
                   <button className="group inline-flex items-center px-8 py-4 bg-earth-gradient text-white-natural font-semibold rounded-organic border-none cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-base">
-                    <span className="mr-2">{t('hero.shopNow')}</span>
+                    <span className="mr-2">Explorar Colecciones</span>
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </button>
                 </Link>
-                <Link href="/collections">
+                <Link href="/products">
                   <button className="group inline-flex items-center px-8 py-4 bg-transparent text-charcoal dark:text-white-natural font-semibold rounded-organic border-2 border-sage-green dark:border-wheat-gold cursor-pointer transition-all duration-300 hover:bg-sage-green hover:text-white-natural dark:hover:bg-wheat-gold dark:hover:text-charcoal text-base">
                     <Users className="mr-2 w-5 h-5" />
-                    {t('hero.exploreCollections')}
+                    Ver Todos los Productos
                   </button>
                 </Link>
               </div>
@@ -106,6 +108,83 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Collections Section */}
+      <section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#1C1C1C] dark:text-[#F5F1E7] mb-3 transition-colors duration-200">
+              Colecciones Destacadas
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6 transition-colors duration-200">
+              Explora nuestras colecciones más populares, cuidadosamente seleccionadas por calidad y genética excepcional
+            </p>
+            <Link href="/collections">
+              <button className="inline-flex items-center px-5 py-2.5 bg-transparent text-[#3E7C4A] font-semibold rounded-lg border-2 border-[#3E7C4A] cursor-pointer transition-all duration-300 hover:bg-[#3E7C4A] hover:text-white text-sm">
+                Ver Todas las Colecciones
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {featuredCollections.map((collection) => (
+              <Link key={collection.id} href={`/collections/${collection.id}`}>
+                <div className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 cursor-pointer">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={collection.image}
+                      alt={collection.nameKey}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="bg-[#3E7C4A] text-white px-3 py-1 rounded-full text-sm font-medium">
+                        Destacada
+                      </span>
+                    </div>
+                    <div className="absolute top-3 right-3">
+                      <button className="w-8 h-8 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200">
+                        <Heart className="w-4 h-4 text-gray-600" />
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-[#1C1C1C] dark:text-[#F5F1E7] mb-2 transition-colors duration-200">
+                      {t(`collections.collectionItems.${collection.nameKey}.name`)}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed transition-colors duration-200">
+                      {t(`collections.collectionItems.${collection.nameKey}.shortDescription`)}
+                    </p>
+                    
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-1">
+                        <Star className="w-4 h-4 text-[#E6B450] fill-current" />
+                        <span className="text-sm text-gray-600 dark:text-gray-400">
+                          {collection.rating}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+                        <Eye className="w-4 h-4" />
+                        <span>{collection.followers.toLocaleString()}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                        {collection.itemCount} {collection.itemCount === 1 ? 'producto' : 'productos'}
+                      </span>
+                      <span className="text-sm font-medium text-[#3E7C4A] group-hover:text-[#2d5f3a] transition-colors duration-200">
+                        Explorar →
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

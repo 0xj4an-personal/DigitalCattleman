@@ -40,16 +40,16 @@ export default function Header() {
               {t('home')}
             </Link>
             <Link 
-              href="/products" 
-              className="text-[#1C1C1C] dark:text-[#F5F1E7] no-underline transition-colors duration-200 text-base font-medium hover:text-[#3E7C4A] dark:hover:text-[#3E7C4A]"
-            >
-              {t('products')}
-            </Link>
-            <Link 
               href="/collections" 
               className="text-[#1C1C1C] dark:text-[#F5F1E7] no-underline transition-colors duration-200 text-base font-medium hover:text-[#3E7C4A] dark:hover:text-[#3E7C4A]"
             >
               {t('collections')}
+            </Link>
+            <Link 
+              href="/products" 
+              className="text-[#1C1C1C] dark:text-[#F5F1E7] no-underline transition-colors duration-200 text-base font-medium hover:text-[#3E7C4A] dark:hover:text-[#3E7C4A]"
+            >
+              {t('products')}
             </Link>
             <Link 
               href="/about" 
@@ -106,20 +106,20 @@ export default function Header() {
                 {t('home')}
               </Link>
               <Link 
-                href="/products" 
-                className="block py-4 px-4 text-[#1C1C1C] dark:text-[#F5F1E7] no-underline text-base font-medium transition-colors duration-200 hover:text-[#3E7C4A] dark:hover:text-[#3E7C4A] hover:bg-gray-50 dark:hover:bg-gray-800 touch-manipulation"
-                onClick={() => setIsMenuOpen(false)}
-                style={{ minHeight: '44px' }}
-              >
-                {t('products')}
-              </Link>
-              <Link 
                 href="/collections" 
                 className="block py-4 px-4 text-[#1C1C1C] dark:text-[#F5F1E7] no-underline text-base font-medium transition-colors duration-200 hover:text-[#3E7C4A] dark:hover:text-[#3E7C4A] hover:bg-gray-50 dark:hover:bg-gray-800 touch-manipulation"
                 onClick={() => setIsMenuOpen(false)}
                 style={{ minHeight: '44px' }}
               >
                 {t('collections')}
+              </Link>
+              <Link 
+                href="/products" 
+                className="block py-4 px-4 text-[#1C1C1C] dark:text-[#F5F1E7] no-underline text-base font-medium transition-colors duration-200 hover:text-[#3E7C4A] dark:hover:text-[#3E7C4A] hover:bg-gray-50 dark:hover:bg-gray-800 touch-manipulation"
+                onClick={() => setIsMenuOpen(false)}
+                style={{ minHeight: '44px' }}
+              >
+                {t('products')}
               </Link>
               <Link 
                 href="/about" 
