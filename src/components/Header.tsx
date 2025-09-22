@@ -10,7 +10,7 @@ import ThemeToggle from './ThemeToggle';
 import VerificationStatus from './VerificationStatus';
 import VerificationButton from './VerificationButton';
 import VerificationPopup from './VerificationPopup';
-import Logo from './Logo';
+import LogoStatic from './LogoStatic';
 import { useVerification } from '@/contexts/VerificationContext';
 import { env } from '../../env.config';
 import { useTranslations } from 'next-intl';
@@ -27,7 +27,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 no-underline">
-            <Logo width={40} height={40} />
+            <LogoStatic width={40} height={40} />
             <span className="text-xl font-bold text-[#1C1C1C] dark:text-[#F5F1E7] transition-colors duration-200">{env.APP_NAME}</span>
           </Link>
 

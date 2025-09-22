@@ -9,24 +9,8 @@ const nextConfig: NextConfig = {
   
   // Image optimization
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'localhost',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.ganaderodigital.xyz',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+    domains: ['localhost'],
     unoptimized: false,
-    // Ensure static images are served correctly
-    formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 60,
   },
   
   // Performance optimizations

@@ -1,21 +1,20 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-interface LogoProps {
+interface LogoStaticProps {
   width?: number;
   height?: number;
   className?: string;
   alt?: string;
 }
 
-export default function Logo({ 
+export default function LogoStatic({ 
   width = 40, 
   height = 40, 
   className = '', 
   alt = 'Ganadero Digital Logo' 
-}: LogoProps) {
+}: LogoStaticProps) {
   const [mounted, setMounted] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -66,7 +65,7 @@ export default function Logo({
 
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
-      <Image
+      <img
         src="/assets/Logo.png"
         alt={alt}
         width={width}
@@ -76,9 +75,10 @@ export default function Logo({
         }`}
         style={{
           filter: isDark ? 'brightness(0) invert(1)' : 'none',
+          width: width,
+          height: height,
+          objectFit: 'contain'
         }}
-        priority
-        unoptimized={process.env.NODE_ENV === 'development'}
         onError={() => setImageError(true)}
         onLoad={() => setImageError(false)}
       />

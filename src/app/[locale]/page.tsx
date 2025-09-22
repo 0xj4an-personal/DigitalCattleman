@@ -4,7 +4,7 @@ import { ArrowRight, Zap, Shield, Users, ShoppingCart, Wallet, Star, Eye, Heart 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import ProductCard from '@/components/ProductCard';
-import Logo from '@/components/Logo';
+import LogoStatic from '@/components/LogoStatic';
 import VerificationPopup from '@/components/VerificationPopup';
 import WalletConnect from '@/components/WalletConnect';
 import { useTranslations } from 'next-intl';
@@ -93,7 +93,7 @@ export default function Home() {
                 <div className="text-center relative z-10">
                   {/* Logo with Nature Glow */}
                   <div className="mb-6 animate-nature-glow">
-                    <Logo 
+                    <LogoStatic 
                       width={90} 
                       height={90} 
                       className="rounded-xl mx-auto drop-shadow-lg"
@@ -270,7 +270,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           {/* Logo */}
           <div className="mb-6">
-            <Logo 
+            <LogoStatic 
               width={64} 
               height={64} 
               className="rounded-xl mx-auto"

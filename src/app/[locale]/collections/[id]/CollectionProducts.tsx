@@ -13,7 +13,8 @@ interface CollectionProductsProps {
 }
 
 export default function CollectionProducts({ collection, products }: CollectionProductsProps) {
-  const t = useTranslations('products');
+  const t = useTranslations('collections');
+  const tProducts = useTranslations('products');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<string>('newest');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -68,7 +69,7 @@ export default function CollectionProducts({ collection, products }: CollectionP
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400" size={20} />
             <input
               type="text"
-              placeholder={`Buscar en ${t(`collections.collectionItems.${collection.nameKey}.name`)}...`}
+              placeholder={`Buscar en ${t(`collectionItems.${collection.nameKey}.name`)}...`}
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
               className="w-full py-3 pl-12 pr-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl text-base bg-white dark:bg-gray-700 text-[#1C1C1C] dark:text-[#F5F1E7] placeholder-gray-500 dark:placeholder-gray-400 focus:border-[#3E7C4A] focus:outline-none transition-colors duration-200"
@@ -79,16 +80,16 @@ export default function CollectionProducts({ collection, products }: CollectionP
           <div className="flex flex-wrap gap-4 items-center">
             {/* Sort Dropdown */}
             <div className="flex items-center gap-2">
-              <span className="text-gray-500 dark:text-gray-400 text-sm">Ordenar Por:</span>
+              <span className="text-gray-500 dark:text-gray-400 text-sm">{tProducts('sortBy')}:</span>
               <select
                 value={sortBy}
                 onChange={(e) => handleSort(e.target.value)}
                 className="py-2 px-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-sm text-[#1C1C1C] dark:text-[#F5F1E7] focus:border-[#3E7C4A] focus:outline-none transition-colors duration-200"
               >
-                <option value="newest">Más Recientes</option>
-                <option value="price-low">Precio: Menor a Mayor</option>
-                <option value="price-high">Precio: Mayor a Menor</option>
-                <option value="rating">Mejor Valorados</option>
+                <option value="newest">{tProducts('newest')}</option>
+                <option value="price-low">{tProducts('priceLowToHigh')}</option>
+                <option value="price-high">{tProducts('priceHighToLow')}</option>
+                <option value="rating">{tProducts('highestRated')}</option>
               </select>
             </div>
 
@@ -123,16 +124,16 @@ export default function CollectionProducts({ collection, products }: CollectionP
       {filteredProducts.length === 0 ? (
         <div className="bg-white dark:bg-gray-800 p-12 rounded-2xl text-center shadow-lg transition-colors duration-200">
           <h3 className="text-xl font-semibold text-[#1C1C1C] dark:text-[#F5F1E7] mb-2 transition-colors duration-200">
-            No se encontraron productos
+            {tProducts('noProductsFound')}
           </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-200">
-            No hay productos que coincidan con tu búsqueda en esta colección.
+            {tProducts('tryAdjustingFilters')}
           </p>
           <button
             onClick={() => handleSearch('')}
             className="py-3 px-6 bg-[#3E7C4A] text-white border-none rounded-xl cursor-pointer text-sm font-semibold hover:bg-[#2d5f3a] transition-all duration-200"
           >
-            Limpiar Búsqueda
+            {tProducts('clearFilters')}
           </button>
         </div>
       ) : (
@@ -150,7 +151,10 @@ export default function CollectionProducts({ collection, products }: CollectionP
       {/* Results Summary */}
       <div className="text-center text-gray-600 dark:text-gray-400 transition-colors duration-200">
         <p>
-          Mostrando {filteredProducts.length} de {products.length} productos en {t(`collections.collectionItems.${collection.nameKey}.name`)}
+          {tProducts('showingResults', { 
+            count: filteredProducts.length,
+            total: products.length 
+          })} en {t(`collectionItems.${collection.nameKey}.name`)}
         </p>
       </div>
     </>
